@@ -54,7 +54,6 @@ nnoremap<tab> %
 vnoremap<tab> %
 
 set wrap
-set colorcolumn=85
 
 nnoremap<up> <nop>
 nnoremap<down> <nop>
