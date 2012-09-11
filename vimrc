@@ -81,7 +81,7 @@ nnoremap<leader>v :vsp<CR>
 
 " ack, search text in file from vim, substitute for grep
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nmoremap<leader>a :Ack
+nnoremap<leader>a :Ack
 
 "
 
