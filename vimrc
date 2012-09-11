@@ -12,8 +12,8 @@ set relativenumber
 " retireves undo changes even after closing file.
 set undofile
 
-" solves  backspace issues with vim
-set backspace=indent,eol,start
+" solves backspace issues with vim
+set backspace=2
 
 "for filename completion
 set wildmode=longest:full
@@ -55,14 +55,8 @@ vnoremap<tab> %
 
 set wrap
 
-nnoremap<up> <nop>
-nnoremap<down> <nop>
-nnoremap<left> <nop>
-nnoremap<right> <nop>
-inoremap<up> <nop>
-inoremap<down> <nop>
-inoremap<left> <nop>
-inoremap<right> <nop>
+nnoremap<up> gk
+nnoremap<down> gj
 nnoremap j gj
 nnoremap k gk
 
@@ -82,16 +76,14 @@ inoremap jj ESC
 " sort CSS properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
+" vsp using leader
+nnoremap<leader>v :vsp<CR>
+
 " ack, search text in file from vim, substitute for grep
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nmoremap<leader>a :Ack
 
 "
-set paste
-set background=dark
-set nolist
-" set textwidth=0 " comment this line out to set textwidth to the default 80
-set pastetoggle=<F11>
-
 
 " For using Ctl+C for copying to system buffer in visual mode
 " http://vim.wikia.com/wiki/Cut/copy_and_paste_using_visual_selection
@@ -101,15 +93,6 @@ map <C-c> "+y<CR>
 map <C-v> "+gP<CR>
 
 :colorscheme desert
-
-" diff related coloring
-hi DiffAdd   ctermbg=6
-hi DiffChange   ctermbg=yellow
-hi DiffDelete   ctermbg=1
-hi DiffText ctermfg=5 ctermbg=lightgrey
-if &diff
-    syntax off
-endif
 
 "Delete trailing white space, useful for Python ;)
 autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -121,3 +104,8 @@ call pathogen#infect()
 nmap<C-t> :tabnew<CR>
 nmap<C-left> :tabprev<CR>
 nmap<C-right> :tabnext<CR>
+nnoremap<leader><up> <C-w>k
+nnoremap<leader><down> <C-w>j
+nnoremap<leader><right> <C-w>l
+nnoremap<leader><left> <C-w>h
+nnoremap \ <C-w>w
