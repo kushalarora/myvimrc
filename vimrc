@@ -108,4 +108,7 @@ nnoremap<leader><up> <C-w>k
 nnoremap<leader><down> <C-w>j
 nnoremap<leader><right> <C-w>l
 nnoremap<leader><left> <C-w>h
-nnoremap \ <C-w>w
+nnoremap<Tab> <C-w>w
+
+" show line and column number at bottom.
+set ruler
